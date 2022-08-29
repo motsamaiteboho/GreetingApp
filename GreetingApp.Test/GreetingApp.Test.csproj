@@ -19,7 +19,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-      <ProjectReference Include="../GreetingApp/GreetingApp.csproj" />
+    <ProjectReference Include="../GreetingApp/GreetingApp.csproj" />
   </ItemGroup>
 
 </Project>

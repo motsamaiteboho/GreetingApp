@@ -1,19 +1,15 @@
-public class GreetedUsers
+public static class GreetedUsers
 {
-    Dictionary<string,int> users;
-    public GreetedUsers(Dictionary<string,int> users)
-    {
-        this.users = users;
-    }
+    static Dictionary<string,int> users = InMemoryUsers.getUsers();
+    
 
-    public void GetGreetedUsers()
+    public static void GetGreetedUsers()
     {
+        Console.Clear();
+        Console.WriteLine("GREETED USERS");
+        Console.WriteLine("======================");
         foreach(var user in users)
         {
-            Console.Clear();
-            Console.WriteLine("GREETED USERS");
-            Console.WriteLine("======================");
-            Console.WriteLine("Username : Count");
             Console.WriteLine($"{user.Key} : {user.Value}");
         }
     }

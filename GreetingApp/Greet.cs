@@ -1,12 +1,7 @@
 
-public class Greet
+public static class Greet
 {
-    Dictionary<string,int> users;
-    public Greet(Dictionary<string,int> users)
-    {
-        this.users = users;
-    }
-    public void GreetUser()
+    public static void GreetUser()
     {
         Console.Clear();
         Console.Write("Enter the username: ");
@@ -39,16 +34,6 @@ public class Greet
                 break;
             }
         }
-
-        if(!users.ContainsKey(sName))
-            users.Add(sName, 1);
-        else
-            users[sName]++;
+        InMemoryUsers.Add(sName);
     }
-
-    public Dictionary<string,int> newUsers()
-    {
-        return users;
-    }
-
 }

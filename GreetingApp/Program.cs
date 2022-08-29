@@ -1,7 +1,7 @@
 ﻿namespace GreetingApp;
 class Program
 {
-    static Dictionary<string, int> users = new();
+   
 
     static void Main(string[] args)
     {
@@ -19,6 +19,7 @@ class Program
 
         do
         {
+            Console.WriteLine("\n");
             Console.WriteLine("GREETING APP");
             Console.WriteLine("===================================");
             Console.WriteLine(menu);
@@ -28,12 +29,26 @@ class Program
             switch (selection)
             {
                 case "1": 
-                Greet greet = new Greet(users);
-                greet.GreetUser();
+                Greet.GreetUser();
                 break;
                 case "2":
-                GreetedUsers greetedUsers = new GreetedUsers(users);
-                greetedUsers.GetGreetedUsers();
+                GreetedUsers.GetGreetedUsers();
+                break;
+                case "3":
+                GreetedUser.UserCount();
+                break;
+                case "4":
+                Counter.getCount();
+                break;
+                case "5":
+                InMemoryUsers.ClearAll();
+                break;
+                case "6":
+                InMemoryUsers.Remove();
+                break;
+                case "7":
+                 Console.WriteLine("Here are the valid options: 1 , 2, 3 ,4 , 5, 6, 7");
+                 Console.WriteLine("option x to exit the appliction");
                 break;
             }
         }
