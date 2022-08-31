@@ -4,7 +4,7 @@ public static class InMemoryUsers
 
     public static void Add(string sName)
     {
-        string newUser = sName.ToUpper();
+        string newUser = sName.ToUpper().Trim();
 
         if(!users.ContainsKey(newUser))
             users.Add(newUser, 1);
@@ -21,7 +21,7 @@ public static class InMemoryUsers
     {
         Console.Write("Enter the username: ");
         string sName = Console.ReadLine();
-        string user = sName.ToUpper();
+        string user = sName.ToUpper().Trim();
         if(users.ContainsKey(user))
         {
              users.Remove(user);

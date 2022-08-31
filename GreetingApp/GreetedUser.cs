@@ -2,15 +2,20 @@ public static class GreetedUser
 {
     static Dictionary<string,int> users = InMemoryUsers.getUsers();
 
-    public static void UserCount()
+    public static string UserCount(string sName)
     {
-        Console.Write("Enter the username: ");
-        string sName = Console.ReadLine().ToUpper();
-
+        string sResult = string.Empty;
+        if(sName == string.Empty)
+        {
+            Console.Write("Enter the username: ");
+            sName = Console.ReadLine().ToUpper().Trim();
+        }
+        
         if(users.ContainsKey(sName))
-            Console.WriteLine($"{sName}  has been greeted {users[sName]} times");
+             sResult += $"{sName}  has been greeted {users[sName]} times";
         else
-            Console.Write($"{sName} hasn't been greeted");
+             sResult += $"{sName} hasn't been greeted";
+        return sResult;
     }
 
 

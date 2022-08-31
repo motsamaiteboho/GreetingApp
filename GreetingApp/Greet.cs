@@ -1,39 +1,47 @@
 
 public static class Greet
 {
-    public static void GreetUser()
+    public static string GreetUser(string sName, string option)
     {
-        Console.Clear();
-        Console.Write("Enter the username: ");
-        string sName =  Console.ReadLine();
-
-        string option = string.Empty;
+        if(sName == string.Empty)
+        {
+         Console.Clear();
+         Console.Write("Enter the username: ");
+         sName =  Console.ReadLine();
+        }
+        
         string Languages = 
         "1. English \n"+
         "2. Sesotho \n"+
         "3. Afrikaans \n";
 
+        string greeting = "";
         while(option !="x")
         {
-            Console.WriteLine(Languages);
-            Console.Write("choose a language: ");
-            option = Console.ReadLine();
+            if(option == string.Empty)
+            {
+                Console.WriteLine(Languages);
+                Console.Write("choose a language: ");
+                option = Console.ReadLine();
+            }
+           
             switch (option)
             {
                 case "1": 
-                 Console.WriteLine($"Hello, {sName}");
+                  greeting += $"Hello, {sName}";
                  option = "x";
                 break;
                 case "2": 
-                 Console.WriteLine($"Dumelang, {sName}");
+                  greeting += $"Dumelang, {sName}";
                  option = "x";
                 break;
                 case "3": 
-                 Console.WriteLine($"Hallo, {sName}");
+                  greeting += $"Hallo, {sName}";
                  option = "x";
                 break;
             }
         }
         InMemoryUsers.Add(sName);
+        return greeting;
     }
 }

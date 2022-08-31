@@ -1,10 +1,10 @@
 namespace GreetingApp.Test;
 
-public class  TestGreet
+public class TestGreet
 {
     [Fact]
-    public void ShouldGreetTheUser()
+    public void ShouldReturnTheGreetingInSpecifiedLangage()
     {
-        
+        Assert.Equal("Hello, Teboho",Greet.GreetUser("Teboho", "1"));
     }
 }

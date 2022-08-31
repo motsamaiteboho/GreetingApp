@@ -29,16 +29,16 @@ class Program
             switch (selection)
             {
                 case "1": 
-                Greet.GreetUser();
+                Console.WriteLine(Greet.GreetUser(string.Empty, string.Empty));
                 break;
                 case "2":
-                GreetedUsers.GetGreetedUsers();
+                Console.WriteLine(GreetedUsers.GetGreetedUsers());
                 break;
                 case "3":
-                GreetedUser.UserCount();
+                Console.WriteLine(GreetedUser.UserCount(string.Empty));
                 break;
                 case "4":
-                Counter.getCount();
+                Console.WriteLine(Counter.getCount());
                 break;
                 case "5":
                 InMemoryUsers.ClearAll();
